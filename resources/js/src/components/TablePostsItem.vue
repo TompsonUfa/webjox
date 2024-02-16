@@ -83,7 +83,7 @@ export default {
         deletePost(postId) {
             axios.delete(`/api/panel/posts/${postId}`)
                 .then(res => {
-                    console.log(res)
+                    this.$emit('update-status')
                 })
                 .catch(err => {
                     console.log(err)
@@ -96,6 +96,7 @@ export default {
     components: {
         UiDropdown
     },
+    emits: ['update-status'],
 }
 </script>
 

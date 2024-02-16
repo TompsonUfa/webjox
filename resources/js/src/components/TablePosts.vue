@@ -10,7 +10,7 @@
                 </tr>
             </thead>
             <tbody>
-                <table-posts-item :post="post" v-for="post in posts" :key="post.id"></table-posts-item>
+                <table-posts-item @update-status="this.$emit('update-status')" :post="post" v-for="post in posts" :key="post.id"></table-posts-item>
             </tbody>
         </table>
     </div>
@@ -29,7 +29,8 @@ export default {
             type: Array,
             required: true,
         }
-    }
+    },
+    emits: ['update-status'],
 }
 </script>
 

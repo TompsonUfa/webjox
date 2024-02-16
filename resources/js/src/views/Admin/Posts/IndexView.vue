@@ -9,7 +9,7 @@
             <form-search @get-data="search => {this.search = search; this.getPosts()}"></form-search>
         </div>
         <div class="col-12">
-            <table-posts :posts="this.posts"></table-posts>
+            <table-posts @update-status="this.getPosts" :posts="this.posts"></table-posts>
         </div>
         <div class="col-12" v-if="pagination.last_page !== 1">
             <app-pagination @get-data="item => this.getPosts(item)" :pagination="this.pagination"></app-pagination>
